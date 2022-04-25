@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.0.final using JasperReports Library version 6.19.0-646c68931cebf1a58bc65c4359d1f0ca223c5e94  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="lista-empreeiteiros" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="832" leftMargin="5" rightMargin="5" topMargin="5" bottomMargin="5" uuid="7a9b1987-1f4c-4b59-a404-2ceb27dc0992">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="rhFactor"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<subDataset name="Dataset1" uuid="afbbfb6f-f9b2-44ad-b7d9-b4c41e4e5ca4">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="rhFactor"/>
+		<queryString language="SQL">
+			<![CDATA[select nome, documento, telefone, email
+from fornecedor
+order by nome]]>
+		</queryString>
+		<field name="nome" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="nome"/>
+			<property name="com.jaspersoft.studio.field.label" value="nome"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="fornecedor"/>
+		</field>
+		<field name="documento" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="documento"/>
+			<property name="com.jaspersoft.studio.field.label" value="documento"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="fornecedor"/>
+		</field>
+		<field name="telefone" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="telefone"/>
+			<property name="com.jaspersoft.studio.field.label" value="telefone"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="fornecedor"/>
+		</field>
+		<field name="email" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="email"/>
+			<property name="com.jaspersoft.studio.field.label" value="email"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="fornecedor"/>
+		</field>
+	</subDataset>
+	<subDataset name="DatasetEmpreeiteiros" uuid="d95ef3a8-4955-445c-98cf-fd9fbd6149e9">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="rhFactor"/>
+		<queryString language="SQL">
+			<![CDATA[select nome, nome_responsavel, documento, documento_responsavel, telefone, conta_banco_nome, conta_banco_numero, conta_agencia, conta_tipo, conta_chave_pix
+from empreiteiro
+order by nome]]>
+		</queryString>
+		<field name="nome" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="nome"/>
+			<property name="com.jaspersoft.studio.field.label" value="nome"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="empreiteiro"/>
+		</field>
+		<field name="nome_responsavel" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="nome_responsavel"/>
+			<property name="com.jaspersoft.studio.field.label" value="nome_responsavel"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="empreiteiro"/>
+		</field>
+		<field name="documento" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="documento"/>
+			<property name="com.jaspersoft.studio.field.label" value="documento"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="empreiteiro"/>
+		</field>
+		<field name="documento_responsavel" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="documento_responsavel"/>
+			<property name="com.jaspersoft.studio.field.label" value="documento_responsavel"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="empreiteiro"/>
+		</field>
+		<field name="telefone" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="telefone"/>
+			<property name="com.jaspersoft.studio.field.label" value="telefone"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="empreiteiro"/>
+		</field>
+		<field name="conta_banco_nome" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="conta_banco_nome"/>
+			<property name="com.jaspersoft.studio.field.label" value="conta_banco_nome"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="empreiteiro"/>
+		</field>
+		<field name="conta_banco_numero" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="conta_banco_numero"/>
+			<property name="com.jaspersoft.studio.field.label" value="conta_banco_numero"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="empreiteiro"/>
+		</field>
+		<field name="conta_agencia" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="conta_agencia"/>
+			<property name="com.jaspersoft.studio.field.label" value="conta_agencia"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="empreiteiro"/>
+		</field>
+		<field name="conta_tipo" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="conta_tipo"/>
+			<property name="com.jaspersoft.studio.field.label" value="conta_tipo"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="empreiteiro"/>
+		</field>
+		<field name="conta_chave_pix" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="conta_chave_pix"/>
+			<property name="com.jaspersoft.studio.field.label" value="conta_chave_pix"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="empreiteiro"/>
+		</field>
+	</subDataset>
+	<parameter name="PATH_LOGO" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[select nome, nome_responsavel, documento, documento_responsavel, telefone, conta_banco_nome, conta_agencia, conta_banco_numero, conta_tipo, conta_chave_pix
+from empreiteiro
+order by nome]]>
+	</queryString>
+	<field name="nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome"/>
+		<property name="com.jaspersoft.studio.field.label" value="nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empreiteiro"/>
+	</field>
+	<field name="nome_responsavel" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome_responsavel"/>
+		<property name="com.jaspersoft.studio.field.label" value="nome_responsavel"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empreiteiro"/>
+	</field>
+	<field name="documento" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="documento"/>
+		<property name="com.jaspersoft.studio.field.label" value="documento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empreiteiro"/>
+	</field>
+	<field name="documento_responsavel" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="documento_responsavel"/>
+		<property name="com.jaspersoft.studio.field.label" value="documento_responsavel"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empreiteiro"/>
+	</field>
+	<field name="telefone" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="telefone"/>
+		<property name="com.jaspersoft.studio.field.label" value="telefone"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empreiteiro"/>
+	</field>
+	<field name="conta_banco_nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="conta_banco_nome"/>
+		<property name="com.jaspersoft.studio.field.label" value="conta_banco_nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empreiteiro"/>
+	</field>
+	<field name="conta_banco_numero" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="conta_banco_numero"/>
+		<property name="com.jaspersoft.studio.field.label" value="conta_banco_numero"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empreiteiro"/>
+	</field>
+	<field name="conta_agencia" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="conta_agencia"/>
+		<property name="com.jaspersoft.studio.field.label" value="conta_agencia"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empreiteiro"/>
+	</field>
+	<field name="COLUMN_9" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="conta_banco_numero"/>
+		<property name="com.jaspersoft.studio.field.label" value="conta_banco_numero"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empreiteiro"/>
+	</field>
+	<field name="conta_tipo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="conta_tipo"/>
+		<property name="com.jaspersoft.studio.field.label" value="conta_tipo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empreiteiro"/>
+	</field>
+	<field name="conta_chave_pix" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="conta_chave_pix"/>
+		<property name="com.jaspersoft.studio.field.label" value="conta_chave_pix"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="empreiteiro"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="114">
+			<line>
+				<reportElement x="0" y="0" width="831" height="1" uuid="f7e37332-fd79-410f-ac7c-82c0747b8915"/>
+			</line>
+			<line>
+				<reportElement x="0" y="79" width="831" height="1" uuid="9355e451-32e0-4b79-9bf6-c2336754de8d"/>
+			</line>
+			<line>
+				<reportElement x="0" y="1" width="1" height="78" uuid="f52e8e40-d6c6-44b0-b591-8ff79ed47980"/>
+			</line>
+			<line>
+				<reportElement x="830" y="0" width="1" height="79" uuid="24d02dea-102b-4b8c-bebe-4d800e40a9a4">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="1" y="9" width="209" height="65" uuid="ebd41088-1835-47ea-98d8-3939753275c3">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{PATH_LOGO}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="247" y="20" width="482" height="39" forecolor="#056839" uuid="0caca24d-442c-4aa6-8c25-ef0e48bf38a1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[EMPREEITEIROS]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="90" width="831" height="24" backcolor="#D9D7D7" uuid="2a554b43-488e-46f7-9536-f7c9d4367818">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="3" y="91" width="142" height="20" backcolor="#CCC6C6" uuid="3d5dd899-e620-4b7b-98ec-17006ce2f9c8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FORNECEDOR]]></text>
+			</staticText>
+			<line>
+				<reportElement x="146" y="91" width="1" height="22" uuid="eb65b830-fa0c-43e6-80ce-db49c4aaf1de">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="150" y="91" width="90" height="20" backcolor="#CCC6C6" uuid="db1b6040-be24-4109-bc86-e68ae5537b8e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CNPJ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="91" width="76" height="20" backcolor="#CCC6C6" uuid="5050d867-bf0c-4a08-bd26-2e082ff31a8e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TELEFONE]]></text>
+			</staticText>
+			<line>
+				<reportElement x="243" y="91" width="1" height="23" uuid="39dede43-ebc1-4e03-aa9e-6a6b6ee49dd7">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="387" y="90" width="1" height="23" uuid="8825e9fb-c3d0-413b-be34-6539a8eeb7d5">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="830" y="90" width="1" height="24" uuid="d0e0482d-254d-4eda-bee1-9c823382b3f4">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="113" width="831" height="1" uuid="d88c03c1-072c-4b16-9b4a-f82809816d3d"/>
+			</line>
+			<line>
+				<reportElement x="0" y="90" width="831" height="1" uuid="1f571dea-47cb-45bd-b1c3-87ee7e3fabe2">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="90" width="1" height="23" uuid="3c9bd484-3b78-49d2-8688-c017fed2421c">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="220" y="0" width="1" height="79" uuid="3838a5a4-3581-4002-b3d0-6307a2a3c261"/>
+			</line>
+			<staticText>
+				<reportElement x="247" y="91" width="136" height="20" backcolor="#CCC6C6" uuid="93d7df8b-7ded-4928-87ac-e2934bbf02bd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RESPONSAVEL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="91" width="81" height="20" backcolor="#CCC6C6" uuid="cf9c6d92-c9e7-4a6d-b8f8-7c739b2c52d9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CPF]]></text>
+			</staticText>
+			<line>
+				<reportElement x="474" y="90" width="1" height="23" uuid="4ff05bca-1fba-40b9-998f-85de3c8c2acc">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="560" y="90" width="1" height="23" uuid="170496d4-8607-4605-be45-018ffc5df885">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="560" y="91" width="75" height="20" backcolor="#CCC6C6" uuid="0f135eb3-39e8-46fa-9026-b7bb25dda1e2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BANCO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="640" y="90" width="1" height="23" uuid="bbd70127-b3af-4873-aac7-62e70f2f1931">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="690" y="90" width="1" height="24" uuid="84b219cc-bc5a-4a33-b58f-9899659c7de0">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="760" y="90" width="1" height="23" uuid="42565ed1-9d42-4b84-ac9a-d7ef986876d9">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="640" y="91" width="48" height="20" backcolor="#CCC6C6" uuid="bd1e2821-5708-44e7-9bfb-623e3c2d2145"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIPO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="692" y="91" width="66" height="20" backcolor="#CCC6C6" uuid="7d889e5e-ee00-4fbc-b2d7-f588ccb6372a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONTA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="761" y="91" width="69" height="20" backcolor="#CCC6C6" uuid="1d8dc1b4-6188-4470-be92-3a458c37669a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AGENCIA]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="40" splitType="Stretch">
+			<componentElement>
+				<reportElement x="0" y="0" width="831" height="39" isRemoveLineWhenBlank="true" uuid="8e08b822-df4a-4704-a68e-40238aa99a9a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}==1]]></printWhenExpression>
+				</reportElement>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="DatasetEmpreeiteiros" uuid="5863d41c-5f87-4e69-a3cd-663f6db2f714">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="39" width="831">
+						<textField>
+							<reportElement x="6" y="4" width="137" height="30" uuid="ced3a53f-0282-455e-a6cb-30b66a3993fd"/>
+							<textElement verticalAlignment="Middle">
+								<font size="9"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="247" y="4" width="138" height="30" uuid="ea307ae1-a500-412d-a1f0-4afa8a824e38">
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							</reportElement>
+							<textElement verticalAlignment="Middle">
+								<font size="9"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{nome_responsavel} == null ? " " : $F{nome_responsavel}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="149" y="4" width="92" height="30" uuid="81954bb3-731e-48a2-abf7-c69a6dbb4b26">
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							</reportElement>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font size="9"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{documento}.length() ==  14 ? $F{documento}.substring(0,2)+"."+$F{documento}.substring(2,5)+"."+$F{documento}.substring(5,8)+"/"+$F{documento}.substring(8,12)+"-"+$F{documento}.substring(12,14) : $F{documento}.length() ==  11 ? $F{documento}.substring(0,3)+"."+$F{documento}.substring(3,6)+"."+$F{documento}.substring(6,9)+"-"+$F{documento}.substring(9,11):$F{documento} == null ? "" :$F{documento}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="390" y="4" width="82" height="30" uuid="d63b0456-af7e-4216-a6fa-a58e5a85d47d">
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							</reportElement>
+							<textElement textAlignment="Center" verticalAlignment="Middle"/>
+							<textFieldExpression><![CDATA[$F{documento_responsavel}.length() ==  14 ? $F{documento_responsavel}.substring(0,2)+"."+$F{documento_responsavel}.substring(2,5)+"."+$F{documento_responsavel}.substring(5,8)+"/"+$F{documento_responsavel}.substring(8,12)+"-"+$F{documento_responsavel}.substring(12,14) : $F{documento_responsavel}.length() ==  11 ? $F{documento_responsavel}.substring(0,3)+"."+$F{documento_responsavel}.substring(3,6)+"."+$F{documento_responsavel}.substring(6,9)+"-"+$F{documento_responsavel}.substring(9,11):$F{documento_responsavel} == null ? " " :$F{documento_responsavel}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="477" y="4" width="81" height="30" uuid="bb5db478-8573-4cc2-8a34-e8b3cf7398a6">
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							</reportElement>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font size="9"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{telefone}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="565" y="4" width="74" height="30" uuid="f686ff86-6f65-4409-8a44-39ac1c17e4b3">
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							</reportElement>
+							<textElement verticalAlignment="Middle">
+								<font size="9"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{conta_banco_nome}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="694" y="4" width="65" height="30" uuid="d0d8ab56-31d7-456f-9b0e-a2cb9b566c95">
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							</reportElement>
+							<textElement verticalAlignment="Middle"/>
+							<textFieldExpression><![CDATA[$F{conta_agencia}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="643" y="4" width="46" height="30" uuid="e79cedcb-5b7e-45b2-82d0-b53c670e903b">
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							</reportElement>
+							<textElement textAlignment="Center" verticalAlignment="Middle"/>
+							<textFieldExpression><![CDATA[$F{conta_tipo}]]></textFieldExpression>
+						</textField>
+						<line>
+							<reportElement x="0" y="0" width="1" height="39" uuid="4ced07ae-366c-44ae-a6fe-215720d67712"/>
+						</line>
+						<line>
+							<reportElement x="146" y="0" width="1" height="39" uuid="3036f8f6-e663-4b94-b911-bfcf83a2d6e5">
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							</reportElement>
+						</line>
+						<line>
+							<reportElement x="243" y="0" width="1" height="39" uuid="00c46f27-4975-4cd3-9b2f-b375feb1fa62">
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							</reportElement>
+						</line>
+						<line>
+							<reportElement x="387" y="0" width="1" height="39" uuid="0ef72d1f-d286-42e7-9b7c-ec0a6f0f0ab5">
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							</reportElement>
+						</line>
+						<line>
+							<reportElement x="474" y="0" width="1" height="39" uuid="4151b37c-eb67-4272-84a0-e6d0016baf5b">
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							</reportElement>
+						</line>
+						<line>
+							<reportElement x="560" y="0" width="1" height="39" uuid="194d9476-d977-458e-887d-b5014f5758b6">
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							</reportElement>
+						</line>
+						<line>
+							<reportElement x="690" y="0" width="1" height="39" uuid="0827331a-3350-43b4-8bfe-500ca81d6dd8">
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							</reportElement>
+						</line>
+						<line>
+							<reportElement x="760" y="0" width="1" height="39" uuid="71ddf1a6-349d-44b0-bbce-ce8078e639b2">
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							</reportElement>
+						</line>
+						<line>
+							<reportElement x="830" y="0" width="1" height="39" uuid="a9bd7764-4aaa-4da2-b70f-4e0446c9e413">
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							</reportElement>
+						</line>
+						<line>
+							<reportElement x="1" y="38" width="830" height="1" uuid="2c738567-09eb-4b59-a4b3-41432d7250e5">
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							</reportElement>
+						</line>
+						<line>
+							<reportElement x="640" y="0" width="1" height="39" uuid="bd9980fb-b5d3-451c-bbf1-06a303407c81">
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							</reportElement>
+						</line>
+						<textField>
+							<reportElement x="766" y="4" width="63" height="30" uuid="ca31d4c5-973a-4eb4-94b7-46bc3c8856f3">
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							</reportElement>
+							<textElement verticalAlignment="Middle">
+								<font size="9"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{conta_banco_numero}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="660" y="-1" width="100" height="30" uuid="9ed082d2-7ded-45a5-bc78-fd655a855093"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="760" y="-1" width="70" height="30" uuid="9942e708-65fa-442c-aca7-33964b5d5e6f"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
