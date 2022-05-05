@@ -18,7 +18,33 @@ import net.sf.jasperreports.engine.JasperPrint;
 public class DemoService {
 
 	
-	public byte[] gerarRelatorioListFornecedor() throws JRException, IOException {
+	
+	public byte[] gerarRelatorio(int codigoRelatorio,String dataDe,String dataAte,Long idProjeto,Long idEmpreeiteiro) throws JRException, IOException {
+		switch (codigoRelatorio) {
+		case 1:
+			return relatorioListaFornecedor();
+		case 2:
+			return relatorioListaEmpreeiteiro();
+		case 3:
+			return relatorioListaFaturados(dataDe, dataAte, idProjeto);
+		case 4:
+			return relatorioListaAguardandoFaturamento(dataDe, dataAte, idProjeto);
+		case 5:
+			return relatorioListaContasPagas(dataDe, dataAte, idProjeto);
+		case 6:
+			return relatorioListaContasApagar(dataDe, dataAte, idProjeto);
+		case 7:
+			return relatorioMedicaoObra(idProjeto,idEmpreeiteiro);
+		case 8:
+			return relatorioFechamentoObra(idProjeto);
+		default:
+			break;
+		}
+		return null;
+	}
+	
+	
+	private byte[] relatorioListaFornecedor() throws JRException, IOException {
 		Map<String, Object> parametros = new HashMap<>();
 		parametros.put("PATH_LOGO", "C:\\Users\\maico\\Documents\\GitHub\\relatoriosRhfactor\\img\\logo.png");
 		
@@ -27,6 +53,83 @@ public class DemoService {
 		return JasperExportManager.exportReportToPdf(jasperPrint);
 	}
 	
+	private byte[] relatorioListaEmpreeiteiro() throws JRException, IOException {
+		Map<String, Object> parametros = new HashMap<>();
+		parametros.put("PATH_LOGO", "C:\\Users\\maico\\Documents\\GitHub\\relatoriosRhfactor\\img\\logo.png");
+		
+		InputStream inputStream = this.getClass().getResourceAsStream("/relatorios/lista-empreeiteiros.jasper"); 
+		JasperPrint jasperPrint = JasperFillManager.fillReport(inputStream, parametros,conexao());
+		return JasperExportManager.exportReportToPdf(jasperPrint);
+	}
+	
+	private byte[] relatorioListaFaturados(String dataDe,String dataAte,Long idProjeto) throws JRException, IOException {
+		Map<String, Object> parametros = new HashMap<>();
+		parametros.put("PATH_LOGO", "C:\\Users\\maico\\Documents\\GitHub\\relatoriosRhfactor\\img\\logo.png");
+		parametros.put("DATA_DE", dataDe);
+		parametros.put("DATA_ATE", dataAte);
+		parametros.put("ID_PROJETO", idProjeto);
+		
+		InputStream inputStream = this.getClass().getResourceAsStream("/relatorios/lista-faturados.jasper"); 
+		JasperPrint jasperPrint = JasperFillManager.fillReport(inputStream, parametros,conexao());
+		return JasperExportManager.exportReportToPdf(jasperPrint);
+	}
+	
+	private byte[] relatorioListaAguardandoFaturamento(String dataDe,String dataAte,Long idProjeto) throws JRException, IOException {
+		Map<String, Object> parametros = new HashMap<>();
+		parametros.put("PATH_LOGO", "C:\\Users\\maico\\Documents\\GitHub\\relatoriosRhfactor\\img\\logo.png");
+		parametros.put("DATA_DE", dataDe);
+		parametros.put("DATA_ATE", dataAte);
+		parametros.put("ID_PROJETO", idProjeto);
+		
+		InputStream inputStream = this.getClass().getResourceAsStream("/relatorios/lista-aguardando-faturamento.jasper"); 
+		JasperPrint jasperPrint = JasperFillManager.fillReport(inputStream, parametros,conexao());
+		return JasperExportManager.exportReportToPdf(jasperPrint);
+	}
+	
+	private byte[] relatorioListaContasPagas(String dataDe,String dataAte,Long idProjeto) throws JRException, IOException {
+		Map<String, Object> parametros = new HashMap<>();
+		parametros.put("PATH_LOGO", "C:\\Users\\maico\\Documents\\GitHub\\relatoriosRhfactor\\img\\logo.png");
+		parametros.put("DATA_DE", dataDe);
+		parametros.put("DATA_ATE", dataAte);
+		parametros.put("ID_PROJETO", idProjeto);
+		
+		InputStream inputStream = this.getClass().getResourceAsStream("/relatorios/lista-contas-pagas.jasper"); 
+		JasperPrint jasperPrint = JasperFillManager.fillReport(inputStream, parametros,conexao());
+		return JasperExportManager.exportReportToPdf(jasperPrint);
+	}
+	
+	private byte[] relatorioListaContasApagar(String dataDe,String dataAte,Long idProjeto) throws JRException, IOException {
+		Map<String, Object> parametros = new HashMap<>();
+		parametros.put("PATH_LOGO", "C:\\Users\\maico\\Documents\\GitHub\\relatoriosRhfactor\\img\\logo.png");
+		parametros.put("DATA_DE", dataDe);
+		parametros.put("DATA_ATE", dataAte);
+		parametros.put("ID_PROJETO", idProjeto);
+		
+		InputStream inputStream = this.getClass().getResourceAsStream("/relatorios/lista-contas-a-pagar.jasper"); 
+		JasperPrint jasperPrint = JasperFillManager.fillReport(inputStream, parametros,conexao());
+		return JasperExportManager.exportReportToPdf(jasperPrint);
+	}
+	
+	private byte[] relatorioMedicaoObra(Long idProjeto,Long idEmpreeiteiro) throws JRException, IOException {
+		Map<String, Object> parametros = new HashMap<>();
+		parametros.put("PATH_LOGO", "C:\\Users\\maico\\Documents\\GitHub\\relatoriosRhfactor\\img\\logo.png");
+		parametros.put("ID_PROJETO", idProjeto);
+		parametros.put("ID_EMPREITEIRO", idEmpreeiteiro);
+		
+		InputStream inputStream = this.getClass().getResourceAsStream("/relatorios/medicao-obra.jasper"); 
+		JasperPrint jasperPrint = JasperFillManager.fillReport(inputStream, parametros,conexao());
+		return JasperExportManager.exportReportToPdf(jasperPrint);
+	}
+	
+	private byte[] relatorioFechamentoObra(Long idProjeto) throws JRException, IOException {
+		Map<String, Object> parametros = new HashMap<>();
+		parametros.put("PATH_LOGO", "C:\\Users\\maico\\Documents\\GitHub\\relatoriosRhfactor\\img\\logo.png");
+		parametros.put("ID_PROJETO", idProjeto);
+		
+		InputStream inputStream = this.getClass().getResourceAsStream("/relatorios/fechamento-obra.jasper"); 
+		JasperPrint jasperPrint = JasperFillManager.fillReport(inputStream, parametros,conexao());
+		return JasperExportManager.exportReportToPdf(jasperPrint);
+	}
 	
 	
 	private Connection conexao() {
